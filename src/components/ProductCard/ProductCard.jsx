@@ -16,6 +16,7 @@ const ProductCard = ({ product }) => {
           alt={"Product Image"}
           width={300}
           height={300}
+          className="hover:scale-105 transition-transform duration-300 ease-in-out"
         />
       </div>
       <div className="p-2">

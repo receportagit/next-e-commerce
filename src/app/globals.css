@@ -40,6 +40,13 @@ input:focus {
   scale: 1.25;
 }
 
+@media screen and (max-width: 768px) {
+  .main-swiper .swiper-pagination-bullet {
+    width: 20px !important;
+    height: 5px !important;
+  }
+}
+
 /* section 2 */
 .swiper-btn .swiper-button-prev:after,
 .swiper-btn .swiper-button-next:after {
@@ -84,4 +91,17 @@ input:focus {
 .ciswiper .swiper-pagination-bullet-active {
   width: 25px;
   border-radius: 15px;
+}
+
+/*-------- Antd --------*/
+.ant-tabs-nav .ant-tabs-nav-operations {
+  display: none !important;
+}
+.ant-tabs-nav-list {
+  display: flex;
+  align-items: center;
+  gap: 5;
+}
+.ant-tabs-tab {
+  margin: 0 !important;
 }

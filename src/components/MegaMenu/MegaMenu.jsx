@@ -2,6 +2,7 @@ import { Bars3Icon } from "@heroicons/react/24/solid";
 import Link from "next/link";
 import { Logo } from "../../components";
 import { categories } from "../../lib/categories/categories";
+import { useScroll } from "./../../hooks/useScroll";
 
 const MegaMenu = ({
   collapsedMobileMenu,
@@ -10,8 +11,13 @@ const MegaMenu = ({
   showSubMenu,
   icons,
 }) => {
+  const scrollY = useScroll();
+
   return (
-    <div className="bg-white">
+    <div
+      className={`bg-white
+      ${scrollY > 150 ? "fixed top-0 left-0 w-full z-40 shadow-md" : null}`}
+    >
       <div className="container px-5 lg:px-20 flex items-center justify-between py-4">
         <div className="lg:hidden">
           <Bars3Icon
@@ -54,7 +60,7 @@ const MegaMenu = ({
                 </button>
 
                 <div
-                  className={`w-full rounded-xl bg-white p-2 lg:absolute lg:left-0 lg:top-full lg:w-[800px] lg:p-8 lg:shadow-lg transition-all duration-300 ease-in-out ${
+                  className={`w-full border border-neutral bg-white p-2 lg:absolute lg:left-0 lg:top-full lg:w-[800px] lg:p-8 lg:shadow-lg transition-all duration-300 ease-in-out ${
                     showSubMenu === category.id
                       ? "opacity-100 scale-100"
                       : "opacity-0 scale-95"
