@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Lato, Open_Sans, Raleway } from "next/font/google";
+import { Footer, Header } from "../sections";
 import "./globals.css";
-import { Header } from "../sections";
 
 const lato = Lato({
   variable: "--font-lato",
@@ -38,6 +38,7 @@ export default function RootLayout({
       >
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

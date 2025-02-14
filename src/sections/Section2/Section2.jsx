@@ -21,7 +21,7 @@ const Section2 = () => {
   }, [swiperInstance]);
 
   return (
-    <div className="container px-5 lg:px-20 mb-8" data-aos="fade-up">
+    <div className="container px-5 lg:px-10 mb-8" data-aos="fade-up">
       <div className="flex justify-between items-center">
         <h3 className="font-lato font-semibold text-xl uppercase">
           Best of the week

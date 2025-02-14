@@ -1,6 +1,6 @@
 "use client";
 
-import { ProductCard, ScrollAnimatedIcon } from "@/components";
+import { ProductCard } from "@/components";
 import products from "@/lib/product/product";
 import { Tabs } from "antd";
 import "swiper/css";
@@ -37,9 +37,7 @@ const Section4 = () => {
   };
 
   return (
-    <div
-      className="container px-5 lg:px-20 mb-8"
-    >
+    <div className="container px-5 lg:px-10 mb-8">
       <div className="w-full relative">
         <Tabs
           tabBarStyle={{

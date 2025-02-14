@@ -18,7 +18,7 @@ const MegaMenu = ({
       className={`bg-white
       ${scrollY > 150 ? "fixed top-0 left-0 w-full z-40 shadow-md" : null}`}
     >
-      <div className="container px-5 lg:px-20 flex items-center justify-between py-4">
+      <div className="container px-5 lg:px-10 flex items-center justify-between py-4">
         <div className="lg:hidden">
           <Bars3Icon
             className="h-7 w-7 text-lightPrimary"

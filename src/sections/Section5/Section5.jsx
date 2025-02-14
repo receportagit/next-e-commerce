@@ -1,14 +1,5 @@
 import Image from "next/image";
 
-const galleryImages = [
-  { src: "/galery/galery1.jpg", colSpan: 2 },
-  { src: "/galery/galery2.jpg", colSpan: 2 },
-  { src: "/galery/galery3.jpg", colSpan: 1 },
-  { src: "/galery/galery4.jpg", colSpan: 1 },
-  { src: "/galery/galery5.jpg", colSpan: 1 },
-  { src: "/galery/galery6.jpg", colSpan: 1 },
-];
-
 export default function Section5() {
   return (
     <div data-aos="fade-up" className="mb-8">
