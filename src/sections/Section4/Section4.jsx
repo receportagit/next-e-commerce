@@ -8,8 +8,6 @@ import "swiper/css/pagination";
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-const { TabPane } = Tabs;
-
 const Section4 = () => {
   const categories = [
     { key: "1", title: "Men's Clothing" },
@@ -36,6 +34,58 @@ const Section4 = () => {
     return shuffledArray;
   };
 
+  const items = categories.map((category) => {
+    const shuffledProducts = shuffleArray(products);
+    return {
+      key: category.key,
+      label: (
+        <span className="font-raleway font-bold text-sm text-white p-2 bg-secondary rounded-lg uppercase">
+          {category.title}
+        </span>
+      ),
+      children: (
+        <Swiper
+          slidesPerView={1}
+          spaceBetween={10}
+          loop={true}
+          breakpoints={{
+            320: {
+              slidesPerView: 2,
+              spaceBetween: 8,
+            },
+            640: {
+              slidesPerView: 2,
+              spaceBetween: 8,
+            },
+            768: {
+              slidesPerView: 3,
+              spaceBetween: 8,
+            },
+            1024: {
+              slidesPerView: 4,
+              spaceBetween: 8,
+            },
+            1200: {
+              slidesPerView: 5,
+              spaceBetween: 8,
+            },
+          }}
+          navigation={true}
+          modules={[Navigation]}
+          className="section4"
+        >
+          {shuffledProducts.map((product, index) => {
+            return (
+              <SwiperSlide key={index}>
+                <ProductCard product={product} />
+              </SwiperSlide>
+            );
+          })}
+        </Swiper>
+      ),
+    };
+  });
+
   return (
     <div className="container px-5 lg:px-10 mb-8">
       <div className="w-full relative">
@@ -48,60 +98,8 @@ const Section4 = () => {
           }}
           scroll={{ x: "max-content" }}
           tabBarExtraContent={null}
-        >
-          {categories.map((category) => {
-            const shuffledProducts = shuffleArray(products);
-            return (
-              <TabPane
-                tab={
-                  <span className="font-raleway font-bold text-sm text-white p-2 bg-secondary rounded-lg uppercase">
-                    {category.title}
-                  </span>
-                }
-                key={category.key}
-              >
-                <Swiper
-                  slidesPerView={1}
-                  spaceBetween={10}
-                  loop={true}
-                  breakpoints={{
-                    320: {
-                      slidesPerView: 2,
-                      spaceBetween: 8,
-                    },
-                    640: {
-                      slidesPerView: 2,
-                      spaceBetween: 8,
-                    },
-                    768: {
-                      slidesPerView: 3,
-                      spaceBetween: 8,
-                    },
-                    1024: {
-                      slidesPerView: 4,
-                      spaceBetween: 8,
-                    },
-                    1200: {
-                      slidesPerView: 5,
-                      spaceBetween: 8,
-                    },
-                  }}
-                  navigation={true}
-                  modules={[Navigation]}
-                  className="section4"
-                >
-                  {shuffledProducts.map((product, index) => {
-                    return (
-                      <SwiperSlide key={index}>
-                        <ProductCard product={product} />
-                      </SwiperSlide>
-                    );
-                  })}
-                </Swiper>
-              </TabPane>
-            );
-          })}
-        </Tabs>
+          items={items}
+        />
       </div>
     </div>
   );

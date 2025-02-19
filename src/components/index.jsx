@@ -7,3 +7,5 @@ export { default as SwiperContent } from "./SwiperContent/SwiperContent";
 export { default as ProductCard } from "./ProductCard/ProductCard";
 export { default as MegaMenu } from "./MegaMenu/MegaMenu";
 export { default as ScrollAnimatedIcon } from "./ScrollAnimatedIcon/ScrollAnimatedIcon";
+export { default as ShoppingCartIcon } from "./ShoppingCartIcon/ShoppingCartIcon";
+

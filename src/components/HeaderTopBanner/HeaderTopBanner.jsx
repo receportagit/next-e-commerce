@@ -5,7 +5,7 @@ import Textra from "react-textra";
 
 const HeaderTopBanner = () => {
   return (
-    <div className="grid place-items-center h-[55px] py-4 bg-primary text-light text-center font-sans font-bold text-xs uppercase">
+    <div className="grid place-items-center h-[55px] py-4 bg-secondary text-light text-center font-sans font-bold text-xs uppercase">
       <Textra
         duration={200}
         effect="downTop"

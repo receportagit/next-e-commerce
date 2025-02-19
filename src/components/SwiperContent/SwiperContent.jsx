@@ -6,7 +6,7 @@ const SwiperContent = ({ imagePath, title, description }) => {
     <div className="relative">
       {/* Arka plan resmi */}
       <Image
-        priority={true}
+        priority
         src={imagePath}
         alt="hero-banner1"
         width={1920}

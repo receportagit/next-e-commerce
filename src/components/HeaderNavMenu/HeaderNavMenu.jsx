@@ -3,11 +3,15 @@
 import {
   HeartIcon,
   MagnifyingGlassIcon,
-  ShoppingCartIcon,
   UserCircleIcon,
 } from "@heroicons/react/24/outline";
 import { useEffect, useRef, useState } from "react";
-import { MegaMenu, MobileSidebar, SearchComponent } from "../../components";
+import {
+  MegaMenu,
+  MobileSidebar,
+  SearchComponent,
+  ShoppingCartIcon,
+} from "../../components";
 
 const HeaderNavMenu = () => {
   const [showSubMenu, setShowSubMenu] = useState(false);
@@ -55,14 +59,7 @@ const HeaderNavMenu = () => {
     },
     {
       id: 3,
-      component: (
-        <div className="relative">
-          <ShoppingCartIcon className="h-7 w-7 text-lightPrimary" />
-          <span className="font-lato absolute top-[-2px] right-[-5px] inline-flex items-center justify-center w-4 h-4 bg-danger text-white text-xs rounded-full">
-            3
-          </span>
-        </div>
-      ),
+      component: <ShoppingCartIcon />,
       label: "Cart",
       link: "/cart",
       onClick: () => console.log("Cart clicked"),

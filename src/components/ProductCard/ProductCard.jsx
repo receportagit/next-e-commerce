@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const ProductCard = ({ product }) => {
   if (!product || !product.image) {
@@ -11,13 +12,16 @@ const ProductCard = ({ product }) => {
       className="relative bg-white overflow-hidden w-full group"
     >
       <div className="relative aspect-h-1 aspect-w-1 w-full overflow-hidden xl:aspect-h-8 xl:aspect-w-7">
-        <Image
-          src={product.image}
-          alt={"Product Image"}
-          width={300}
-          height={300}
-          className="hover:scale-105 transition-transform duration-300 ease-in-out"
-        />
+        <Link href={{ pathname: "/product" }}>
+          <Image
+            priority
+            src={product.image}
+            alt={"Product Image"}
+            width={300}
+            height={300}
+            className="hover:scale-105 transition-transform duration-300 ease-in-out"
+          />
+        </Link>
       </div>
       <div className="p-2">
         <h3 className="font-lato text-xs sm:text-sm lg:text-lg font-semibold text-primary">
